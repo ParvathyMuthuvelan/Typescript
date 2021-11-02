@@ -1,0 +1,733 @@
+Scope
+var	let	const
+Variables declared with var are in the function scope.
+Variables declared as let are in the block scope.	
+Variables declared as const are in the block scope.
+var
+function f1()
+{
+    var a=10;
+}
+console.log(a)
+let
+for (let i = 0; i < 3; i++) {
+  console.log(i);
+}
+console.log(i);
+const
+{
+  const x = 2;
+  console.log(x);
+}
+console.log(x);
+
+Difference between var, let, and const keyword in JavaScript
+
+Scope
+
+Variables declared with var are in the function scope.
+Variables declared as let are in the block scope.	
+Variables declared as const are in the block scope.
+{
+  const x = 2;
+  console.log(x);
+}
+console.log(x);
+
+Hoisting
+Hoisting means that you can define a variable before its declaration.
+
+var	let	const
+Allowed	Not allowed	Not allowed
+var
+x = 8; 
+
+console.log(x);
+
+var x;
+let
+x = 8; 
+
+console.log(x);
+
+let x;
+const
+x = 8; 
+
+console.log(x);
+
+const x;
+
+To reassign a value is to reassign the value of a variable.
+
+var	let	const
+Allowed	Allowed	Not allowed
+var v1 = 1;
+
+v1 = 30;
+
+console.log(v1);
+
+let v1 = 1;
+
+v1 = 30;
+
+console.log(v1);
+const v1 = 1;
+
+v1 = 30;
+
+console.log(v1);
+
+TypeScript is Case-sensitive
+
+
+Typescript Statements
+A Typescript statement is an instruction to perform a specific action. A Typical Typescript program consists of several such sequences of statements and they control the flow of the program.
+
+Here is an example of three statements
+
+//statement 1  create a variable
+var message;      
+ 
+//statement 2  assigns “Hello World” to message variable
+message=”hello world”; 
+       
+//statmenent 3 print out console log
+console.log(message);
+ 
+A single statement may span multiple lines.
+
+Or you can write multiple statements in a single line, provided you separate each statement by a semicolon.
+Semi-Colon
+; the semicolon is used to indicate the end of a statement.
+
+For Example
+var message
+message=”hello world”
+console.log(message)
+ 
+But, they are optional if you use a single line for each statement
+
+For Example, this is also valid
+var message
+message=”hello world”
+console.log(message)
+ 
+But, they are required if you have multiple statements in a line
+
+var message ; message=”hello world” ; console.log(message) ;
+ 
+TypeScript Expressions
+Expressions are units of code that produces value. They can appear anywhere in the code. They can be part of the function arguments or right side of an assignment, etc
+
+Example of Expressions
+
+5+7           //This is an arithmetic expression that evaluates to 12
+I++           //Arithmetic expression
+a && b        // Logical Expressions
+ 
+The expressions can be of various types Arithmetic, String,  Array & object Initialisation, Logical, Left-Hand side. Property access, object Creation, Function definition, invocation, etc.
+Whitespace and Line Breaks
+You can add spaces, tabs, and newline characters anywhere in the Typescript Program. The Compiler will ignore them. You can use them to indent your code so that it very easily readable.
+
+Comments in TypeScript
+The Comments can be applied to the line of code or to a block of code
+
+Single-line comments ( // ) − Any text between a // and the end of a line is treated as a comment.
+
+Example
+//this is a single-line comment 
+ 
+Multi-line comments (/* */) − These comments may span multiple lines.
+
+Example
+
+
+/* This is a  
+    Multi-line comment 
+*/
+let num1      //no type is defined.
+let num2
+ 
+num1=100;
+num2=”hello” 
+ 
+console.log(num1+num2) 
+
+let num1      //no type is defined.
+let num2
+ 
+num1=100;
+num2=”hello” 
+ 
+console.log(num1+num2) 
+
+any
+any data type can hold any data. You can change the data type. We use this when we do not know the type of data. any is specific to typescript.
+
+When a variable’s type is not given and typescript cannot infer its type from the initialization then it will be treated as an any type.
+
+
+let notSure: any = 4;    //defined as any
+notSure = "maybe a string instead";
+notSure = false; 
+ 
+let stillNotSure     //No Type specified. infered as any
+stillNotSure=5     
+stillNotSure="may be a strng instead"
+stillNotSure=false;
+ 
+Primitive Types
+TypeScript supports 7 primitive types number, string, boolean, bigint, symbol, undefined, and null. All other data types are objects in Typescript. A primitive data type is a data type that is not an object and has no methods. All primitives are immutable.
+
+string
+We use the string data type to store textual data. The string value is enclosed in double-quotes (“) or single quotes (‘).
+
+
+let message=”Hello World”
+let color=”red"
+ Multiline string
+
+The strings can span multiple lines in such cases the strings are surrounded by the backtick/backquote (`) character
+
+ 
+let sentence: string =`Hello, welcome to the world of typescript, 
+    the typed super of javascript`
+ boolean
+The boolean type is a simple true/false value
+
+
+let isDone: boolean = false; 
+number
+The number data type in TypeScript are 64-bit floating-point values and are used to represent integers and fractions. Typescript also supports the hexadecimal and decimal literals. It also supports the binary and octal literals introduced in ECMAScript 2015.
+
+ 
+let decimal: number = 10; 
+let hex: number = 0xa00d;       //hexadecimal number starts with 0x
+let binary: number = 0b1010;    //binary number starts with 0b 
+let octal: number = 0o633
+
+bigint
+bigint is the new introduction in Typescript 3.2. This will provide a way to represent whole numbers larger than 253. You can get a bigint by calling the BigInt() function or by writing out a BigInt literal by adding an n to the end of any integer numeric literal as shown below.
+
+ 
+let big1: bigint = BigInt(100); // the BigInt function
+let big2: bigint = 100n;        // a BigInt literal.  end with n
+ 
+ null and undefined
+The javascript has two ways to refer to the null. They are null and undefined and are two separate data types in Typescript as well. The null and undefined are subtypes of all other types. That means you can assign null and undefined to something like a number.
+
+
+ 
+let u: undefined = undefined;
+let n: null = null;
+
+
+Typescript Special Types
+never
+The never type represents the value which will never happen. We use it as the return type of a function, which does not return value. For example, the function that always throws an exception as shown below.
+ 
+function doSomething(): never {
+    throw new Error("Error has occurred");
+}
+void
+Void represents the absence of any return value. For example, the following function prints “hello” and returns without returning a value. Hence the return type is void.
+
+It is different from never. never means it never returns a value.
+
+function sayHello(): void { 
+    console.log('Hello!')
+} 
+ Type Annotation in Variable declaration
+ 
+var message : string = "hello world";       //string
+var NumberVar: number = 100;                //number
+var BooleanVar : boolean = true;           //boolean
+var ArrayVar: string[]               
+The types are optional in Typescript. If you do not want to use the types, then annotate it with any as shown below
+
+
+ 
+var StringVar : any= "hello world";      
+var NumberVar: any= 100;   
+ Arrays
+The arrays are annotated using the string[] or Array as shown in the example below.
+
+var cities: string[] = ['Delhi', 'New York', 'London'];
+ 
+//OR
+ 
+var cities: Array<string> =['Delhi', 'New York', 'London'];
+ 
+Function arguments & Return Types
+Here, the function arguments are annotated with the number data type and so is the return type.
+ 
+function add(x: number, y: number): number {
+  return x + y;
+}
+ console.log(add(5,6));
+
+Anonymous Objects
+Here, we are creating an object with two properties. The properties are annotated with the type number & string.
+
+ 
+var student: { id: number; name: string; }; 
+student = { id: 100, name : "Rahul" }
+ console.log(student.id +" "+student.name)
+ 
+Union types
+The union types are special. They allow a variable to be of either of two types. In the example, the id can be either a string or a number. The Typescript allows you to perform both string & arithmetic operation on the variable id.
+ 
+var id: string|number
+ 
+Declaring the variable
+We need to declare the variables before using them. We use let, var or const keyword to declare the variable.
+
+The following example declares the variable using the keyword var. You can as well use let & const here
+ 
+var message: string = "Hello World" 
+ 
+We name the variable as the message. The name message uniquely identifies this variable. Hence, It is also called an Identifier. It should follow the identifier naming rules mentioned in the next tutorial.
+var message: string
+var num: number
+ 
+console.log(message);    //will print undefined as no value is assigned         
+console.log(num);
+ 
+message="Hello World"
+num=1000;
+ 
+console.log(message);
+console.log(num);
+
+
+Global
+Global Scope
+Define the global variable outside of any function/ class or code block and they become part of the global scope. We can use them anywhere within the program.
+
+The following example shows a variable, globalVar defined outside of any function or code block. You can access it anywhere in the code.
+
+ 
+//defined gloablly. outside of any function or code block
+//You can access it from anywhere including the function, code block, nested funciton etc
+ 
+let GlobalVar=100;  
+ 
+function someFn() {          //function
+ 
+  console.log(GlobalVar)
+ 
+  if (true) {         //code block
+    console.log(GlobalVar)
+  }
+ 
+  function nested() {         //nested function within someFn1
+    console.log(GlobalVar)
+  }
+ 
+}
+ 
+for (let c = 0; c < 3; c++){    //code block
+  console.log(GlobalVar);
+}
+ 
+function someOtherFn1() {       //another function
+  console.log(GlobalVar)
+}
+ 
+console.log(GlobalVar)          //outside of any function/code block
+
+ Function Scope
+The function or class variables defined inside the function/class etc are function scoped. They are available to use anywhere within the function. You cannot use them outside the function.
+
+In the following example, the variable fnVar is defined inside the someFn function. This makes it function scoped. You can access it from within the someFn. You can also, access it from the code block or nested function within the someFn
+
+
+function someFn() {
+ 
+  //Variable defined inside the function.
+  //can be accessed from anywhere inside the function 
+  //including the nested function or code block
+ 
+  let fnVar=10                
+ 
+  console.log(fnVar)          //can be accessed here
+ 
+  if (true) {
+    console.log(fnVar)        //can be accessed here
+  }
+ 
+  function nested() {
+    console.log(fnVar)        //can be accessed here
+  }
+ 
+}
+ 
+function someOtherFn() {
+  console.log(fnVar)            //cannot be accessed here
+}
+ 
+for (let c = 0; c < 3; c++){
+  console.log(fnVar);           //cannot be accessed here
+}
+ 
+console.log(fnVar)              //cannot be accessed here
+ 
+Nested function
+The example below defines a fnNestedVar inside the nested function. We can access this variable only within the nested function and its nested functions and code blocks. But not from the parent function or anywhere outside the nested function.
+
+ 
+ 
+function someFn() {
+ 
+  if (true) {
+  }
+ 
+  function nested() {
+    //defined inside nested function
+    //can be accessed only within the nested function and its nested functions & code blocks
+    let fnNestedVar=100         
+    console.log(fnNestedVar) 
+  }
+ 
+  console.log(fnNestedVar)            //cannot be accessed here
+}
+ 
+function someOtherFn() {
+  console.log(fnNestedVar)            //cannot be accessed here
+}
+ 
+for (let c = 0; c < 3; c++){
+  console.log(fnNestedVar);           //cannot be accessed here
+}
+ 
+console.log(fnNestedVar)              //cannot be accessed here
+ 
+Local scope or Block Scope
+The local variables are declared inside a code block. They are also known by the name block variable
+
+The code block is a section of source code clearly delimited using the curly braces. For example inside the if/try/catch/while/for block.
+
+The example below shows a localVar declared inside the if condition. The scope of localVar ends where the curly braces of the if condition ends. Outside the code block, you cannot access it.
+
+
+function someFn() {   
+ 
+  if (true) {        
+ 
+    //defined locally
+    //Its scope ends where curly braces ends
+    let localVar=1000
+    console.log(localVar)      //ok
+  }
+ 
+  console.log(localVar)        //Error
+ 
+  function nested() {         
+    console.log(localVar)      //Error
+  }
+ 
+}
+ 
+for (let c = 0; c < 3; c++){    
+  console.log(localVar);        //Error
+}
+ 
+function someOtherFn() {       
+  console.log(localVar)        //Error
+}
+ 
+console.log(localVar)          //Error
+ 
+var is an exception
+The keyword var is an exception to the above rule. var supports only global & function scope. So if you define a variable inside a code block, it is scoped to enclosing function and not to the code block.
+
+That is the main reason why let exist. To bring the local scope to the Javascript. The let is part of the ES2015 or ES6 specification.
+
+For Example, take the above example and change let to var. You can see that the localVar is not accessible outside the code block and also in the nested function.
+
+function someFn() {   
+ 
+ 
+  if (true) {        
+ 
+    //defined locally using var, which is function scoped
+    //You can access it any where within the someFn
+    //This is the major difference between var & let
+    var localVar=1000
+    console.log(localVar)    //ok
+  }
+ 
+  console.log(localVar)      //ok
+ 
+  function nested() {         
+    console.log(localVar)    //ok
+  }
+ 
+}
+ 
+for (let c = 0; c < 3; c++){    
+  console.log(localVar);       //Error
+}
+ 
+function someOtherFn() {       
+  console.log(localVar)        //Error
+}
+ 
+console.log(localVar)          //Error
+ 
+ 
+Declaring the variable
+There are three keywords, that you can use to declare a variable in Typescript. They are let, var or const keyword. The scoping rules differ between them.
+
+The var supports function & global scopes as shown in the example above.
+
+The let & const support all three scopes.
+
+The following is demonstrates the use of all three scopes. The first example uses var to define and the second example uses let.
+
+The var scope example
+
+ 
+var GlobalScope=1;
+ 
+function someFunc() {
+ 
+  var FunctionScope=2;
+ 
+  if (true) {
+    var BlockScope=3;
+ 
+    console.log(GlobalScope);
+    console.log(FunctionScope);
+    console.log(BlockScope);
+  }
+ 
+  console.log(GlobalScope);
+  console.log(FunctionScope);
+  console.log(BlockScope);    //No Error here
+}
+ 
+console.log(GlobalScope);
+console.log(FunctionScope);     //error
+console.log(BlockScope);        //error
+ 
+The let scope example
+
+ 
+let GlobalScope=1;
+ 
+function someFunc() {
+ 
+  let FunctionScope=2;
+ 
+  if (true) {
+    let BlockScope=3;
+ 
+    console.log(GlobalScope);
+    console.log(FunctionScope);
+    console.log(BlockScope);
+  }
+ 
+  console.log(GlobalScope);
+  console.log(FunctionScope);
+  console.log(BlockScope);      //error
+}
+ 
+console.log(GlobalScope);
+console.log(FunctionScope);     //error
+console.log(BlockScope);        //error
+ 
+Example using for loop
+In the following example, we use the var keyword to declare the variable i, which inside the code block. But since var is function scoped, we can access the i even outside the for loop. Hence it is accessible to the console.log, which is outside
+
+ 
+function countMe(){
+    for (var i = 0; i < 10; i++){
+      console.log(i)
+    }
+    console.log('Counted: ' , i);   //No Error here
+  }
+  countMe();
+ 
+Now change from var to let. The compiler emits an error TS2304: Cannot find name ‘i’.
+
+ 
+function countMe(){
+    for (let i = 0; i < 10; i++){
+      console.log(i)
+    }
+    console.log('Counted: ' , i);    //results in error here
+}
+countMe();
+ 
+Using Let, Var & Const
+
+both type and initial value
+without type, but with an initial value
+only the type
+Without Type/Initial Value
+
+Difference between Let vs Var vs Const
+Variable Scope
+The scope or visibility of the variable is the major difference between these keywords.
+
+var is function scoped
+The variables declared using var are available within the function. If we declare them outside the function, then they are available everywhere i.e. they are a global variable.
+
+If we define them inside a code block, they are still scoped to the enclosing function.
+
+For Example, in the following code. variable localVar is declared inside the if block, but you can refer to it anywhere inside the function in which it is defined. That includes nested functions or other code blocks. But you cannot refer it outside the function.
+
+function someFn() {   
+ 
+  if (true) {        
+ 
+    //defined locally
+    //Its scope ends where curly braces ends
+ 
+    var localVar=1000
+    console.log(localVar)      //ok
+  }
+ 
+  console.log(localVar)        //ok
+ 
+  function nested() {         
+    console.log(localVar)      //ok
+  }
+ 
+}
+ 
+console.log(localVar)      //error
+ 
+let & const is block scoped
+The variables declared using let or const are block-scoped. They are scoped to the block in which they are declared i.e. inside the if/try/catch/while/for block or any code block (enclosed in curly parentheses).
+
+Which means that we can only use it in the code block where we declare them. Outside the code block, they are invisible
+
+If they are outside the code block, but within the function body then they become function scoped.
+
+If they are outside the function and code block, then they are available globally or become a global variable.
+
+For Example, change the variable type of localVar to let. You will Typescript immediately throws an error in all instances where they are outside the if block.
+
+ 
+function someFn() {   
+ 
+  if (true) {        
+ 
+    //defined locally
+    //Its scope ends where curly braces ends
+ 
+    let localVar=1000
+    console.log(localVar)      
+  }
+ 
+  console.log(localVar)        //error
+ 
+  function nested() {         
+    console.log(localVar)      //error
+  }
+ 
+}
+ 
+console.log(localVar)      //error
+ 
+lass class_name { 
+   //class scope 
+}
+
+Example: Optional Parameters
+function disp_details(id:number,name:string,mail_id?:string) { 
+   console.log("ID:", id); 
+   console.log("Name",name); 
+   
+   if(mail_id!=undefined)  
+   console.log("Email Id",mail_id); 
+}
+disp_details(123,"Sai");
+disp_details(111,"Sai","Sai@xyz.com");
+
+Example: Rest Parameters
+function addNumbers(...nums:number[]) {  
+   var i;   
+   var sum:number = 0; 
+   
+   for(i = 0;i<nums.length;i++) { 
+      sum = sum + nums[i]; 
+   } 
+   console.log("sum of the numbers",sum) 
+} 
+addNumbers(1,2,3) 
+addNumbers(10,10,10,10,10)
+
+Example: Default parameters
+function calculate_discount(price:number,rate:number = 0.50) { 
+   var discount = price * rate; 
+   console.log("Discount Amount: ",discount); 
+} 
+calculate_discount(1000) 
+calculate_discount(1000,0.30)
+
+Example ─ A Simple Anonymous function
+var msg = function() { 
+   return "hello world";  
+} 
+console.log(msg())
+
+Example ─ Anonymous function with parameters
+var res = function(a:number,b:number) { 
+   return a*b;  
+}; 
+console.log(res(12,2)) 
+
+The Function Constructor
+TypeScript also supports defining a function with the built-in JavaScript constructor called Function ().
+
+Syntax
+var res = new Function( [arguments] ) { ... }.
+Example
+var myFunction = new Function("a", "b", "return a * b"); 
+var x = myFunction(4, 3); 
+console.log(x);
+The new Function() is a call to the constructor which in turn creates and returns a function reference.
+
+TypeScript gives us a data type called tuple that helps to achieve such a purpose.
+
+It represents a heterogeneous collection of values. In other words, tuples enable storing multiple fields of different types. Tuples can also be passed as parameters to functions.
+
+
+var res = (x:number)=>10 + x 
+console.log(res(100))
+
+Syntax
+var tuple_name = [value1,value2,value3,…value n]
+For Example
+var mytuple = [10,"Hello"];
+You can also declare an empty tuple in Typescript and choose to initialize it later.
+
+var mytuple = []; 
+mytuple[0] = 120 
+mytuple[1] = 234
+var mytuple = [10,"Hello","World","typeScript"]; 
+console.log("Items before push "+mytuple.length)    // returns the tuple size 
+
+mytuple.push(12)                                    // append value to the tuple 
+console.log("Items after push "+mytuple.length) 
+console.log("Items before pop "+mytuple.length) 
+console.log(mytuple.pop()+" popped from the tuple") // removes and returns the last item
+  
+console.log("Items after pop "+mytuple.length)
+
+The class keyword is followed by the class name. The rules for identifiers must be considered while naming a class.
+
+A class definition can include the following −
+
+Fields − A field is any variable declared in a class. Fields represent data pertaining to objects
+
+Constructors − Responsible for allocating memory for the objects of the class
+
+Functions − Functions represent actions an object can take. They are also at times referred to as methods
+
+ 
