@@ -19,16 +19,17 @@ let mergedArray = [...origArrayOne, ...origArrayTwo];
 console.log(mergedArray);
 console.log("Merged array= "+mergedArray); 
 
-let origObjectOne = {a: 1, b: 2, c: 3};               
-let origObjectTwo = {d: 4, e: 5, f: 6};               
+//let origObjectOne = {a: 1, b: 2, c: 3};               
+//let origObjectTwo = {d: 4, e: 5, f: 6};               
 
 //Object destructuring
 var rect = { x: 0, y: 10, width: 15, height: 20 };
-console.log("x = "+ x +"rect.x= "+rect.x);
-
+console.log("x = "+ x +" rect.x= "+rect.x);
 // Destructuring assignment
 var {x, y, width, height} = rect;
 console.log("After desructuring ="+x, y, width, height)
+
+
 console.log("Array destructuring ");
  //Array destructuring
  function myFunction(x:number, y:number, z:number) { 
