@@ -1,26 +1,35 @@
 class Car { 
    //field 
-   engine:string; 
+   color:string;
+   model:string; 
    
    //constructor 
-   constructor(engine:string) { 
+   constructor(model:string,color:string) { 
       console.log("cons called");
-      this.engine = engine 
+      this.model = model ;
+      this.color=color;
    }  
    
    //function 
-   disp():void { 
-      console.log("Function displays Engine is  :   "+this.engine) 
+   display():void { 
+      console.log("Model   :   "+this.model);
+      console.log("Color   : "+this.color); 
    } 
 } 
 
 //create an object 
-var obj = new Car("Maruti")
-var obj1 = new Car("Honda")
-var obj2 = new Car("Etios")
+var obj = new Car("Maruti","Grey");
+var obj1 = new Car("Honda","Red")
+var obj2 = new Car("Etios","White")
+
 //access the field 
-console.log("Reading attribute value Engine as :  "+obj.engine)  
-console.log("Reading attribute value Engine as :  "+obj1.engine)  
-console.log("Reading attribute value Engine as :  "+obj2.engine)  
+console.log("Reading attribute value model :  "+obj.model)  
+console.log("Reading attribute value color :  "+obj.color)  
+
 //access the function
-obj.disp()
+console.log("Car 1=")
+obj.display()
+console.log("Car 2=")
+obj1.display()
+console.log("Car 3=")
+obj2.display()
