@@ -1,5 +1,7 @@
 interface ILoan { 
    interest:number 
+   //fn declaration
+   display():void;
 } 
 
 class AgriLoan implements ILoan { 
@@ -10,7 +12,25 @@ class AgriLoan implements ILoan {
       this.interest = interest 
       this.rebate = rebate 
    } 
+   display():void
+   {
+   console.log("Interest for Agriloan :"+this.interest); 
+   }
 } 
 
-var obj2 = new AgriLoan(10,1) 
-console.log("Interest is : "+obj2.interest+" Rebate is : "+obj2.rebate )
+class VehicleLoan implements ILoan{
+   interest:number ;
+   constructor(interest:number)
+   {
+this.interest=interest;
+   }
+   display():void
+   {
+      console.log("Interest for Vehicleloan :"+this.interest); 
+   }
+}
+
+var obj1 = new AgriLoan(10,1) 
+obj1.display();
+var obj2 = new VehicleLoan(15) 
+obj2.display();
